@@ -1,11 +1,3 @@
-
----
-
-### **Backend README (Node.js/Express)**
-
-**`README.md` for Backend**
-
-```markdown
 # AI-Powered Real-Time Feedback System - Backend
 
 This is the backend repository for the AI-Powered Real-Time Feedback System. It handles user feedback submissions and integrates with an AI service to analyze the sentiment of the feedback in real-time.
@@ -36,7 +28,7 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
 
-   ```bash
+   ```
    git clone https://github.com/YourUsername/AI-Feedback-Backend.git
     ```
 2. Navigate to the project directory:
@@ -53,26 +45,24 @@ Before you begin, ensure you have the following installed:
    ```bash
    touch .env
    ```
-    Add the following environment variables to the .env file:
-    ```bash
-        PORT=5000
-        DB_URI=mongodb://localhost:27017/feedback-app  # or PostgreSQL URI
-        AI_API_KEY=your-ai-api-key
-    ```
+   Add the following environment variables to the .env file:
+   ```
+   PORT=5000
+   DB_URI=mongodb://localhost:27017/feedback-app  # or PostgreSQL URI
+   AI_API_KEY=your-ai-api-key
+   ```
 ## Running the Application
 To start the Express server:
-        
-        ```bash
-        npm start
-        ```
+```bash
+npm start
+```
 The API will be available at http://localhost:5000.
 
 ## Running Tests
-To run the test suite:
-    
-            ```bash
-            npm test
-            ```
+To run the test suite:    
+```bash
+npm test
+```
 ## API Endpoints
 - POST /api/feedback: Submit feedback and get real-time sentiment analysis.
     - Body parameters:
