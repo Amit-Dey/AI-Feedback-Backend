@@ -85,4 +85,4 @@ The repository is set up with a GitHub Actions pipeline. It automatically runs t
 Feel free to fork this project, submit issues, or create pull requests.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is open-source and available under the [MIT License](LICENSE).
