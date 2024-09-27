@@ -7,6 +7,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" },
 );
 
 
+
 const submitFeedback = async (req, res) => {
     const { name, email, feedback } = req.body;
 
