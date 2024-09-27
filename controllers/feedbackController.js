@@ -5,11 +5,19 @@ const genAI = new GoogleGenerativeAI(process.env.G_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" },
     generation_config = { "response_mime_type": "application/json" }
 );
-
+const { ClerkExpressRequireAuth } = require('@clerk/clerk-sdk-node')
 
 
 const submitFeedback = async (req, res) => {
     const { name, email, feedback } = req.body;
+
+    // Check if user is logged in
+    ClerkExpressRequireAuth({
+        apiKey: process.env.CLERK_PUBLISHABLE_KEY,
+        onUnauthenticated: () => {
+            res.status(401).json({ message: 'User not authenticated' });
+        }
+    })
 
     // Call AI API to analyze sentiment of the feedback
     const prompt = `Analyze the sentiment of the sentence given below.\n${feedback}\nOutput using this JSON schema:
